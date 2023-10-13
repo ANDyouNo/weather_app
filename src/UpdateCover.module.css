@@ -1,5 +1,5 @@
 .img {
-  background: center / contain no-repeat url("./icons/Refresh.svg");
+  background: center / contain no-repeat url("../icons/Refresh.svg");
   width: calc(var(--index) * 5);
   height: calc(var(--index) * 5);
 }

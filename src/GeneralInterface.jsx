@@ -1,64 +1,55 @@
 import styles from "./GeneralInterface.module.css";
 
-const clouds = "./icons/Cloud.png";
-const thunder = "./icons/Light.png";
-const rain = "./icons/Rainy.png";
-const snow = "./icons/Snow.png";
-const storm = "./icons/Strong_wind.png";
-const sun = "./icons/Sun.png";
-const wind = "./icons/Wind.png";
-const smoke = "./icons/Smoke.png";
-
 function GeneralInterface(props) {
-  let img = null;
+  let icon = "";
   console.log(props.weather.weather[0].main);
   switch (props.weather.weather[0].main) {
     case "Drizzle":
-      img = clouds;
+      icon = styles.clouds;
       break;
     case "Thunderstorm":
-      img = thunder;
+      icon = styles.thunder;
       break;
     case "Rain":
-      img = rain;
+      icon = styles.rain;
       break;
     case "Snow":
-      img = snow;
+      icon = styles.snow;
       break;
 
     case "Mist":
-      img = smoke;
+      icon = styles.smoke;
       break;
     case "Smoke":
-      img = smoke;
+      icon = styles.smoke;
       break;
     case "Haze":
-      img = smoke;
+      icon = styles.smoke;
       break;
     case "Dust":
-      img = smoke;
+      icon = styles.smoke;
       break;
     case "Fog":
-      img = smoke;
+      icon = styles.smoke;
       break;
     case "Sand":
-      img = smoke;
+      icon = styles.smoke;
       break;
     case "Ash":
-      img = smoke;
+      icon = styles.smoke;
       break;
     case "Squall":
-      img = storm;
+      icon = styles.storm;
       break;
     case "Tornado":
-      img = storm;
+      icon = styles.storm;
       break;
 
     case "Clear":
-      img = sun;
+      icon = styles.sun;
       break;
     case "Clouds":
-      img = clouds;
+      icon = styles.clouds;
       break;
   }
 
@@ -66,13 +57,15 @@ function GeneralInterface(props) {
     <div className={styles.GeneralInterface}>
       <div className={styles.container}>
         <h2 className={styles.city}>{props.weather.name}</h2>
-        <img className={styles.img} src={img}></img>
+        <div className={`${styles.img} ${icon}`}></div>
         <h1 className={styles.temperature}>{props.weather.main.temp}°C</h1>
         <p className={styles.description}>
           {props.weather.weather[0].description}
         </p>
       </div>
-      <button onClick={props.searchActivate} className={styles.settings}>set up</button>
+      <button onClick={props.searchActivate} className={styles.settings}>
+        set up
+      </button>
     </div>
   );
 }

@@ -13,7 +13,10 @@
   font-family: Montserrat;
 }
 .container{
-  margin-top: 10vh;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .city {
   font-weight: 500;
@@ -32,7 +35,7 @@
   font-size: 20px;
 }
 .settings {
-  margin-top: 20vh;
+  margin-top: 10vh;
   background-color: white;
   color: black;
   font-family: montserrat;
@@ -44,4 +47,29 @@
 .settings:hover {
   background-color: #00A3FF;
   color: white;
+}
+
+.clouds {
+  background: center / contain no-repeat url("../icons/Cloud.png");
+}
+.thunder {
+  background: center / contain no-repeat url("../icons/Light.png");
+}
+.rain {
+  background: center / contain no-repeat url("../icons/Rainy.png");
+}
+.snow {
+  background: center / contain no-repeat url("../icons/Snow.png");
+}
+.storm {
+  background: center / contain no-repeat url("../icons/Strong_wind.png");
+}
+.sun {
+  background: center / contain no-repeat url("../icons/Sun.png");
+}
+.wind {
+  background: center / contain no-repeat url("../icons/Wind.png");
+}
+.smoke {
+  background: center / contain no-repeat url("../icons/Smoke.png");
 }

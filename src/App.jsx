@@ -50,7 +50,8 @@ function App() {
           localStorage.setItem("name", result.name);
         }
       });
-    setIsSearchPressed(true);
+    setIsSearchPressed(false);
+    setIsActive(true)
   };
 
   function searchActivate() {
@@ -70,10 +71,8 @@ function App() {
         <div></div>
       )}
 
-      {!isSearchPressed &&
-      localStorage.getItem("name") !== null ? (
-        <div></div>
-      ) : (
+      {isSearchPressed ||
+      localStorage.getItem("name") === null ? (
         <div className={searchStl.search}>
           <div className={searchStl.input_container}>
             <h1 className={searchStl.header}>Change city</h1>
@@ -88,6 +87,8 @@ function App() {
             ok
           </button>
         </div>
+      ) : (
+        <div></div>
       )}
 
       {/* If weather is not undefined display results from API */}
